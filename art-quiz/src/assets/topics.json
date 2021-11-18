@@ -1,0 +1,14 @@
+{
+  "art": {
+    "name": {
+      "en": "Art",
+      "be": "Мастацтва"
+    }
+  },
+  "counter-strike": {
+    "name": {
+      "en": "Counter-Strike",
+      "be": "Counter-Strike"
+    }
+  }
+}
