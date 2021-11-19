@@ -1,0 +1,31 @@
+.cards{
+  &__list{
+    display: flex;
+    justify-content: center;
+    margin: 0px auto;
+    gap: 20px;
+  }
+
+  &__item{
+    display: flex;
+    flex: 1 1 1px;
+    max-width: 400px;
+  }
+}
+
+.card{
+  &__link{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  &__image{
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+  }
+}

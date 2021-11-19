@@ -1,0 +1,9 @@
+.navbar{
+  display: flex;
+  justify-content: center;
+
+  &__link{
+    font-size: 36px;
+    padding: 20px 0px;
+  }
+}
