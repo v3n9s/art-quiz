@@ -3,12 +3,14 @@
     "name": {
       "en": "Art",
       "be": "Мастацтва"
-    }
+    },
+    "imageUrl": "https://raw.githubusercontent.com/v3n9s/image-data/master/img/1.jpg"
   },
   "counter-strike": {
     "name": {
       "en": "Counter-Strike",
       "be": "Counter-Strike"
-    }
+    },
+    "imageUrl": "/assets/images/counter-strike/cover.jpg"
   }
 }

@@ -1,0 +1,25 @@
+{
+  "artists": {
+    "name": {
+      "en": "Artists",
+      "be": "Мастакі"
+    },
+    "question": {
+      "en": "Who did painted '{{name}}' ?",
+      "be": "Хто напісаў '{{name}}' ?"
+    },
+    "questionContent": "",
+    "answer": "author"
+  },
+  "pictures": {
+    "name": {
+      "en": "Pictures",
+      "be": "Карціны"
+    },
+    "question": {
+      "en": "Which picture did painted {{author}} ?",
+      "be": "Якую карціну напісаў {{author}} ?"
+    },
+    "answer": "name"
+  }
+}

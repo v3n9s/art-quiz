@@ -1,0 +1,13 @@
+{
+  "players": {
+    "name": {
+      "en": "Players",
+      "be": "Гульцы"
+    },
+    "question": {
+      "en": "Which team does {{nickname}} ({{name}}) plays for ?",
+      "be": "За якую каманду гуляе {{nickname}} ({{name}}) ?"
+    },
+    "answer": "team"
+  }
+}
