@@ -1,15 +1,14 @@
 import { View } from '../view.js';
 import { downloader } from '../downloader.js';
 import { localization } from '../localization.js';
-import { templateReplacer } from '../templateReplacer.js';
 
 export const view = new View({
   viewName: 'categories',
   funcs: {
-    async render(parameters) {
+    async getContext({ parameters }) {
       const topics = await downloader.getTopics();
       const categories = await downloader.getCategoriesFor(parameters.topic);
-      return templateReplacer.replace(await this.getTemplate(), {
+      return {
         categories: Object.entries(categories)
           .map(([key, info]) => {
             return `
@@ -21,7 +20,7 @@ export const view = new View({
             </li>`;
           })
           .join('')
-      });
+      };
     }
   }
 });

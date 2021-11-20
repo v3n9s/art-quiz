@@ -27,9 +27,9 @@ class Router {
     })();
 
     const { view } = await import(`./views/${viewName}.js`);
-    await view.runFuncs('beforeLoad', parameters);
-    document.querySelector('#router').innerHTML = await view.getFormattedTemplate(parameters);
-    view.runFuncs('afterLoad', parameters);
+    await view.runFunc('beforeLoad', { parameters });
+    document.querySelector('#router').innerHTML = await view.getFormattedTemplate({ parameters });
+    view.runFunc('afterLoad', { parameters });
   }
 }
 

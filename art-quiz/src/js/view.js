@@ -1,15 +1,10 @@
+import { templateReplacer } from './templateReplacer.js';
+
 export class View {
   constructor({ viewName, funcs }) {
-    if (!viewName || !funcs?.render) throw new Error('You must pass required arguments in View constructor');
+    if (!viewName || !funcs?.getContext) throw new Error('You must pass required arguments in View constructor');
     this.viewName = viewName;
-    this.data = {};
-    this.funcs = {
-      beforeLoad: [],
-      afterLoad: [],
-      render: funcs.render
-    };
-    if (funcs.beforeLoad) this.funcs.beforeLoad.push(...funcs.beforeLoad);
-    if (funcs.afterLoad) this.funcs.afterLoad.push(...funcs.afterLoad);
+    this.funcs = funcs;
   }
 
   async getTemplate() {
@@ -17,11 +12,11 @@ export class View {
     return this.template;
   }
 
-  async getFormattedTemplate(parameters) {
-    return this.funcs.render.apply(this, [parameters]);
+  async getFormattedTemplate(args) {
+    return templateReplacer.replace(await this.getTemplate(), await this.runFunc('getContext', args));
   }
 
-  runFuncs(stage, parameters) {
-    return Promise.all(this.funcs[stage].map((func) => func.apply(this, [parameters])));
+  runFunc(name, args) {
+    return this.funcs[name]?.apply(this, [args]);
   }
 }

@@ -1,14 +1,13 @@
 import { View } from '../view.js';
 import { downloader } from '../downloader.js';
 import { localization } from '../localization.js';
-import { templateReplacer } from '../templateReplacer.js';
 
 export const view = new View({
   viewName: 'menu',
   funcs: {
-    async render() {
+    async getContext() {
       const topics = await downloader.getTopics();
-      return templateReplacer.replace(await this.getTemplate(), {
+      return {
         topics: Object.entries(topics)
           .map(([key, info]) => {
             return `
@@ -20,7 +19,7 @@ export const view = new View({
             </li>`;
           })
           .join('')
-      });
+      };
     }
   }
 });
