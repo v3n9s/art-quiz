@@ -9,7 +9,8 @@
       "be": "Хто напісаў '{{name}}' ?"
     },
     "questionContent": "",
-    "answer": "author"
+    "answer": "author",
+    "unique": "name"
   },
   "pictures": {
     "name": {
@@ -20,6 +21,7 @@
       "en": "Which picture did painted {{author}} ?",
       "be": "Якую карціну напісаў {{author}} ?"
     },
-    "answer": "name"
+    "answer": "name",
+    "unique": "author"
   }
 }
