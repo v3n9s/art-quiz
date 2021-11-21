@@ -74,6 +74,7 @@ export const view = new View({
       }
     },
     onGameEnd() {
+      this.match.endTime = Date.now();
       let matches = JSON.parse(localStorage.getItem('matches'));
       if (!matches) {
         localStorage.setItem('matches', JSON.stringify([]));
