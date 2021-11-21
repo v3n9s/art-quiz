@@ -21,6 +21,13 @@ class Downloader {
     }
     return this.topics[topicName].items;
   }
+
+  async getRoundTemplates() {
+    if (!this.roundTemplates) {
+      this.roundTemplates = await (await fetch('/assets/round.json')).json();
+    }
+    return this.roundTemplates;
+  }
 }
 
 export const downloader = new Downloader();

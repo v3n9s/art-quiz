@@ -1,0 +1,13 @@
+{
+  "nextLevel": {
+    "en": "Next Level",
+    "be": "Наступны ўзровень"
+  },
+  "results": {
+    "en": "Results",
+    "be": "Вынікі"
+  },
+  "answerContent": "<li class=\"answers__item\" data-answer=\"{{answer}}\">{{answer}}</li>",
+  "nextLevelContent": "<a href=\"#topics/{{topic}}/categories/{{category}}/rounds/{{roundInd}}\" class=\"answers__item answers__next-level\">{{nextLevel}}</a>",
+  "resultsContent": "<a href=\"#results\" class=\"answers__item answers__end-game\" data-end-game>{{results}}</a>"
+}
