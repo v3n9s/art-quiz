@@ -12,7 +12,7 @@ export const view = new View({
           .map(([key, info]) => {
             return `
             <li class="cards__item">
-              <a class="card__link" href="#topics/${key}">
+              <a class="card__link" href="${info.url ?? `#topics/${key}`}">
                 <img class="card__image" src="${info.imageUrl}">
                 ${info.name[localization.getLocale()]}
               </a>

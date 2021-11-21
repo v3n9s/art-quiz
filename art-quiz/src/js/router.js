@@ -3,6 +3,7 @@ class Router {
     this.routes = {
       category: /(?<route>topics\/(?<topic>.+)\/categories\/(?<category>.+))\/rounds\/(?<roundInd>.+)/,
       categories: /(?<route>topics\/(?<topic>.+))/,
+      results: /(?<route>results)/,
       menu: /(?<route>.*)/
     };
 

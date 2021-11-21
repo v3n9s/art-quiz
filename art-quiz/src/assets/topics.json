@@ -12,5 +12,17 @@
       "be": "Counter-Strike"
     },
     "imageUrl": "/assets/images/counter-strike/cover.jpg"
+  },
+  "results": {
+    "name": {
+      "en": "Results",
+      "be": "Вынікі"
+    },
+    "empty": {
+      "en": "No results",
+      "be": "Няма вынікаў"
+    },
+    "url": "#results",
+    "imageUrl": "/assets/images/list-stars.svg"
   }
 }

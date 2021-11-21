@@ -1,0 +1,37 @@
+.results{
+  &__list{
+    max-width: 1280px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__item{
+    display: flex;
+    flex: 1 1 250px;
+  }
+}
+
+.result{
+  &__link{
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__topic{
+    font-size: 28px;
+  }
+
+  &__image{
+    width: 100%;
+  }
+
+  &__category{
+    font-size: 20px;
+  }
+
+  &__answers{
+    font-size: 18px;
+  }
+}
