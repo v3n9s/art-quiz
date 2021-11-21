@@ -1,7 +1,7 @@
 class Router {
   constructor() {
     this.routes = {
-      category: /(?<route>topics\/(?<topic>.+)\/categories\/(?<category>.+))/,
+      category: /(?<route>topics\/(?<topic>.+)\/categories\/(?<category>.+))\/rounds\/(?<roundInd>.+)/,
       categories: /(?<route>topics\/(?<topic>.+))/,
       menu: /(?<route>.*)/
     };
