@@ -8,7 +8,21 @@
       "en": "Which team does {{nickname}} ({{name}}) plays for ?",
       "be": "За якую каманду гуляе {{nickname}} ({{name}}) ?"
     },
+    "baseUrl": "https://raw.githubusercontent.com/v3n9s/csgo-quiz-images/main/players/{{itemInd}}.png",
     "answer": "team",
     "unique": "name"
+  },
+  "teams": {
+    "name": {
+      "en": "Teams",
+      "be": "Каманды"
+    },
+    "question": {
+      "en": "Which player plays for {{team}} ?",
+      "be": "Які гулец гуляе за {{team}} ?"
+    },
+    "baseUrl": "https://raw.githubusercontent.com/v3n9s/csgo-quiz-images/main/players/{{itemInd}}.png",
+    "answer": "nickname",
+    "unique": "team"
   }
 }
