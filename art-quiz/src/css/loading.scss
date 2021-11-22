@@ -1,0 +1,37 @@
+.loading{
+  &__overlay{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFFFFF;
+    transition: opacity 0.25s linear;
+  }
+
+  &__loader{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    perspective: 200px;
+  }
+
+  &__animation{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    animation: loading 1s infinite linear;
+    background-size: cover;
+  }
+}
+
+@keyframes loading{
+  0%{
+    transform: rotateY(0deg);
+  }
+  100%{
+    transform: rotateY(360deg);
+  }
+}
