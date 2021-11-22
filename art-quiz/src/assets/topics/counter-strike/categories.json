@@ -9,6 +9,8 @@
       "be": "За якую каманду гуляе {{nickname}} ({{name}}) ?"
     },
     "baseUrl": "https://raw.githubusercontent.com/v3n9s/csgo-quiz-images/main/players/{{itemInd}}.png",
+    "questionContent": "<img class=\"round__image\" src=\"{{imageUrl}}\">",
+    "answerContent": "<li class=\"answers__item\" data-answer=\"{{answer}}\">{{answer}}</li>",
     "answer": "team",
     "unique": "name"
   },
@@ -22,6 +24,8 @@
       "be": "Які гулец гуляе за {{team}} ?"
     },
     "baseUrl": "https://raw.githubusercontent.com/v3n9s/csgo-quiz-images/main/players/{{itemInd}}.png",
+    "questionContent": "",
+    "answerContent": "<li class=\"answers__item\" data-answer=\"{{answer}}\"><img class=\"answers__image\" src=\"{{imageUrl}}\">{{answer}}</li>",
     "answer": "nickname",
     "unique": "team"
   }

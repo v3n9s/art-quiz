@@ -28,7 +28,7 @@ export const view = new View({
               </a>
             </li>`, {
               topic: category.name[localization.getLocale()],
-              imageUrl: category.imageUrl,
+              imageUrl: match.imageUrl,
               category: category.name[localization.getLocale()],
               rightAnswers: match.rounds.filter(({ userAnswer, rightAnswer }) => {
                 return userAnswer === rightAnswer;

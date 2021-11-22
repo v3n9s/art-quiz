@@ -9,26 +9,33 @@ export const view = new View({
   funcs: {
     async beforeLoad({ parameters }) {
       if (!this.match
-        || this.match.topic !== parameters.topic
-        || this.match.category !== parameters.category) {
+        || +parameters.roundInd === 0) {
         this.match = await createMatch({
           topicName: parameters.topic,
           categoryName: parameters.category
         });
-      } else {
-        const roundInd = this.match.rounds.findIndex((round) => !round.userAnswer);
-        const locationHash = window.location.hash;
-        window.location.hash = locationHash.slice(0, locationHash.lastIndexOf('/') + 1) + roundInd;
       }
     },
     async getContext({ parameters }) {
-      const roundTemplates = await downloader.getRoundTemplates();
+      const category = (await downloader.getCategoriesFor(parameters.topic))[parameters.category];
+      const items = await downloader.getItemsFor(parameters.topic);
       const round = this.match.rounds[parameters.roundInd];
       return {
         question: round.question,
         questionContent: round.questionContent,
         roundInd: parameters.roundInd,
-        answers: round.answers.map((answer) => templateReplacer.replace(roundTemplates.answerContent, { answer: answer })).join('')
+        answers: round.answers
+          .map((answer) => {
+            const itemInd = items.findIndex((item) => item[category.answer] === answer);
+            return templateReplacer.replace(
+              category.answerContent,
+              {
+                answer: answer,
+                imageUrl: templateReplacer.replace(category.baseUrl, { itemInd })
+              }
+            );
+          })
+          .join('')
       };
     },
     afterLoad({ parameters }) {
@@ -59,6 +66,7 @@ export const view = new View({
       [...document.querySelectorAll('.answers__item')]
         .find((elem) => elem.dataset.answer === rightAnswer)
         .classList.add('answers__item_right');
+      document.querySelector('.answers__list').classList.add('answers__list_answered');
 
       if (+parameters.roundInd + 1 === this.match.rounds.length) {
         document.querySelector('.answers__list').innerHTML += templateReplacer.replace(roundTemplates.resultsContent, {
@@ -73,8 +81,12 @@ export const view = new View({
         });
       }
     },
-    onGameEnd() {
+    async onGameEnd({ parameters }) {
+      const category = (await downloader.getCategoriesFor(parameters.topic))[parameters.category];
+      const items = await downloader.getItemsFor(parameters.topic);
       this.match.endTime = Date.now();
+      const itemInd = Math.floor(Math.random() * items.length);
+      this.match.imageUrl = templateReplacer.replace(category.baseUrl, { itemInd });
       let matches = JSON.parse(localStorage.getItem('matches'));
       if (!matches) {
         localStorage.setItem('matches', JSON.stringify([]));

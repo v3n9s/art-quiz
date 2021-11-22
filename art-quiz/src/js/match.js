@@ -17,8 +17,10 @@ export async function createMatch({ topicName, categoryName }) {
       while (usedIndices.includes(randomIndex));
       usedIndices.push(randomIndex);
       const item = items[randomIndex];
+      const imageUrl = templateReplacer.replace(category.baseUrl, { itemInd: randomIndex });
       return {
         question: templateReplacer.replace(category.question[localization.getLocale()], item),
+        questionContent: templateReplacer.replace(category.questionContent, { imageUrl }),
         rightAnswer: item[category.answer],
         answers: [
           ...items

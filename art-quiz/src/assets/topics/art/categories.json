@@ -9,6 +9,8 @@
       "be": "Хто напісаў '{{name}}' ?"
     },
     "baseUrl": "https://raw.githubusercontent.com/v3n9s/image-data/master/img/{{itemInd}}.jpg",
+    "questionContent": "<img class=\"round__image\" src=\"{{imageUrl}}\">",
+    "answerContent": "<li class=\"answers__item\" data-answer=\"{{answer}}\">{{answer}}</li>",
     "answer": "author",
     "unique": "name"
   },
@@ -22,6 +24,8 @@
       "be": "Якую карціну напісаў {{author}} ?"
     },
     "baseUrl": "https://raw.githubusercontent.com/v3n9s/image-data/master/img/{{itemInd}}.jpg",
+    "questionContent": "",
+    "answerContent": "<li class=\"answers__item\" data-answer=\"{{answer}}\"><img class=\"answers__image\" src=\"{{imageUrl}}\">{{answer}}</li>",
     "answer": "name",
     "unique": "author"
   }
