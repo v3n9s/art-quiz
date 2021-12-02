@@ -8,7 +8,7 @@ export class View {
   }
 
   async getTemplate() {
-    if (!this.template) this.template = await (await fetch(`/views/${this.viewName}.html`)).text();
+    if (!this.template) this.template = await (await fetch(`./views/${this.viewName}.html`)).text();
     return this.template;
   }
 
