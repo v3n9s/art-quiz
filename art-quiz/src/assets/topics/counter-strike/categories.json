@@ -5,7 +5,7 @@
       "be": "Гульцы"
     },
     "question": {
-      "en": "Which team does {{nickname}} ({{name}}) plays for ?",
+      "en": "Which team {{nickname}} ({{name}}) plays for ?",
       "be": "За якую каманду гуляе {{nickname}} ({{name}}) ?"
     },
     "baseUrl": "https://raw.githubusercontent.com/v3n9s/csgo-quiz-images/main/players/{{itemInd}}.png",

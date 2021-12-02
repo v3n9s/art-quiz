@@ -5,7 +5,7 @@
       "be": "Мастакі"
     },
     "question": {
-      "en": "Who did painted '{{name}}' ?",
+      "en": "Who painted '{{name}}' ?",
       "be": "Хто напісаў '{{name}}' ?"
     },
     "baseUrl": "https://raw.githubusercontent.com/v3n9s/image-data/master/img/{{itemInd}}.jpg",
@@ -20,7 +20,7 @@
       "be": "Карціны"
     },
     "question": {
-      "en": "Which picture did painted {{author}} ?",
+      "en": "Which picture painted {{author}} ?",
       "be": "Якую карціну напісаў {{author}} ?"
     },
     "baseUrl": "https://raw.githubusercontent.com/v3n9s/image-data/master/img/{{itemInd}}.jpg",
